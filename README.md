@@ -1,100 +1,105 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Love Text</title>
-
-<style>
-
-body{
-margin:0;
-overflow:hidden;
-background:black;
-font-family:Arial, Helvetica, sans-serif;
-}
-
-canvas{
-display:block;
-}
-
-.big{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-color:white;
-font-size:55px;
-font-weight:300;
-letter-spacing:14px;
-white-space:nowrap;
-text-shadow:0 0 10px #fff,0 0 30px #ff6fa5;
-pointer-events:none;
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nasi Goreng Mantap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f8f8;
+    }
+    header {
+      background: #ff5722;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #333;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+    }
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .btn {
+      background: #ff5722;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #333;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
 </head>
-
-<body>
-
-<canvas id="canvas"></canvas>
-<div class="big">I LOVE U PIYA</div>
-
-<script>
-
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let texts=[];
-
-for(let i=0;i<90;i++){
-
-texts.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-size:8+Math.random()*18,   // lebih kecil
-speed:1.2+Math.random()*1.4,
-opacity:0.2+Math.random()*0.6
-});
-
-}
-
-function draw(){
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-ctx.textAlign="center";
-ctx.shadowColor="#ff6fa5";
-ctx.shadowBlur=12;
-
-for(let i=0;i<texts.length;i++){
-
-let t=texts[i];
-
-ctx.globalAlpha=t.opacity;
-ctx.font=t.size+"px Arial";
-ctx.fillStyle="white";
-
-ctx.fillText("I LOVE U PIYA",t.x,t.y);
-
-t.y -= t.speed;
-
-if(t.y < -50){
-t.y = canvas.height + 50;
-t.x = Math.random()*canvas.width;
-}
-
-}
-
-requestAnimationFrame(draw);
-
-}
-
-draw();
-
-</script>
-
-</body>
+<body><header>
+  <h1>Nasi Goreng Mantap 🔥</h1>
+  <p>Lezat, Murah, dan Mengenyangkan!</p>
+</header><nav>
+  <a href="#menu">Menu</a>
+  <a href="#tentang">Tentang</a>
+  <a href="#kontak">Kontak</a>
+</nav><div class="container" id="menu">
+  <h2>Menu Kami</h2>
+  <div class="menu">
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?fried-rice" alt="Nasi Goreng Biasa">
+      <h3>Nasi Goreng Biasa</h3>
+      <p>Rp 15.000</p>
+      <button class="btn">Pesan</button>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?spicy-fried-rice" alt="Nasi Goreng Pedas">
+      <h3>Nasi Goreng Pedas</h3>
+      <p>Rp 18.000</p>
+      <button class="btn">Pesan</button>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?chicken-fried-rice" alt="Nasi Goreng Ayam">
+      <h3>Nasi Goreng Ayam</h3>
+      <p>Rp 20.000</p>
+      <button class="btn">Pesan</button>
+    </div>
+  </div>
+</div><div class="container" id="tentang">
+  <h2>Tentang Kami</h2>
+  <p>Kami menjual nasi goreng dengan bahan berkualitas dan rasa yang mantap. Cocok untuk makan siang maupun malam.</p>
+</div><div class="container" id="kontak">
+  <h2>Kontak</h2>
+  <p>WhatsApp: 08xxxxxxxxxx</p>
+  <p>Alamat: Jl. Contoh No. 123</p>
+</div><footer>
+  <p>&copy; 2026 Nasi Goreng Mantap</p>
+</footer></body>
 </html>
